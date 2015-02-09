@@ -1,0 +1,17 @@
+<div class="container">
+<%= @errors %>
+<h1>Add a review</h1><div class="each_scotch">
+<h1><%= @scotch.distillery %> <%= @scotch.bottling_name %> <%= @scotch.age %></h1>
+<p><img src="<%= @scotch.img_url %>" height="300"/></p>
+<p><%= @scotch.tasting_notes %></p>
+<p>ABV <%= @scotch.abv %>%</p>
+<p></p>
+<h2>So <%= @user.name %>, what did you think?</h2>
+<form action="/add_review" method="post">
+  <br>Rating (1 through 100)<br>
+  <input type="number" name="rating">
+  <br><br>Your Review<br><p><%= @errors %>
+  <textarea name="review" cols=40 rows=4>
+</textarea><br><br>
+<input type="submit" value="Add Review"></form></div>
+</div>

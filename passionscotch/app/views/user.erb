@@ -1,0 +1,22 @@
+<div class="container">
+
+
+  <div class="heading">
+    <h1>Hi, <%= @user.name %>!</h1>
+    <h2>Here are some of your latest reviews</h2>
+  </div>
+  <% @reviews.each do |review| %>
+  <div class="each_scotch">
+    <div class="scotch_title">
+    <%= review.scotch.distillery %>
+    <%= review.scotch.bottling_name %>
+    <%= review.scotch.age %>
+  </div>
+    <img src="<%= review.scotch.img_url %>" height="300"><br>
+    Your Rating: <%= review.ranking %><br>
+    <div class="readable_review_text"><%= review.review %></div>
+    <form action="/<%= review.id %>/edit_review" method="get"><button>Edit/Delete Review</button></form>
+    </div><% end %>
+
+
+  </div>
